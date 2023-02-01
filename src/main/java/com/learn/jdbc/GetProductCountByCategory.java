@@ -5,6 +5,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ *    Statement
+ *       executeQuery   -> result set  -> we can ran Select statement
+ *       executeUpdate  -> We can ran Insert, Update, Delete
+ *       execute
+ *       executeBatch   -> multiple insert, update, delete
+ *
+ */
+
+
+/**
+ *
+ *  Convert this class code in try catch finally block
+ */
 public class GetProductCountByCategory {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
@@ -24,6 +38,8 @@ public class GetProductCountByCategory {
                    "Product count is " + resultSet.getInt(2)
                    + " product sum is " + resultSet.getInt(3));
        }
-        //System.out.println(resultSet.getFetchSize());
+        //We should always close connection to avoid connection leak
+        statement.close();
+        connection.close();
     }
 }
