@@ -43,3 +43,25 @@ public class GetProductCountByCategory {
         connection.close();
     }
 }
+
+
+/**
+ *  try with resources   connection database   jdbc
+ *
+ * try(  connection  ){
+ *
+ * } catch(Exception ex){
+ *
+ *     
+ * }
+ *
+ *
+ * try{
+ *
+ * }catch(){
+ *
+ * }
+ *
+ *
+ *
+ */
