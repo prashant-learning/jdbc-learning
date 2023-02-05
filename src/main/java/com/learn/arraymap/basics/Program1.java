@@ -9,6 +9,10 @@ import java.util.List;
  *
  *    find the product with highest price
  *
+ *
+ *    convert this to map
+ *       Key -> product_id  (id)
+ *       value -> product (id, name, price, category)
  */
 public class Program1 {
 
