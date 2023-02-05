@@ -1,5 +1,7 @@
 package com.learn.jdbc;
 
+import java.io.BufferedInputStream;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +9,7 @@ import java.sql.SQLException;
 
 public class ReadProductById {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args)  {
 
         DatabaseConnection databaseConnection = new DatabaseConnection();
 
