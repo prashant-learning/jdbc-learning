@@ -1,18 +1,6 @@
-package com.learn.arraymap.basics;
+package com.learn.arraymap.basics.day2;
 
-import java.util.Comparator;
-
-/**
- *    class
- *      1. Variable
- *      2. constructor
- *      3. Getter Setter
- *
- *
- */
-
-
-public class Product implements Comparable {
+public class Product {
 
     private String product_id;
     private String product_name;
@@ -26,6 +14,8 @@ public class Product implements Comparable {
         this.product_category = product_category;
     }
 
+    public Product() {
+    }
 
     public String getProduct_id() {
         return product_id;
@@ -57,17 +47,6 @@ public class Product implements Comparable {
 
     public void setProduct_category(String product_category) {
         this.product_category = product_category;
-    }
-
-
-    @Override
-    public int compareTo(Object o) {
-        Product product = (Product) o;
-        if( this.product_price < product.product_price){
-            return  -1;
-        } else if (this.product_price > product.product_price) {
-            return 1;
-        } else return 0;
     }
 
     @Override

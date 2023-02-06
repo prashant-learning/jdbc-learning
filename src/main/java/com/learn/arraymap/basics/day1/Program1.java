@@ -1,4 +1,6 @@
-package com.learn.arraymap.basics;
+package com.learn.arraymap.basics.day1;
+
+import com.learn.arraymap.basics.day1.Product;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +8,11 @@ import java.util.List;
 
 
 /**
+ *
+ *
+ *
+ *
+ *
  *
  *    find the product with highest price
  *
