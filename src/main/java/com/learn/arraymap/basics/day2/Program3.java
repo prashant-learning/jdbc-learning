@@ -27,9 +27,6 @@ public class Program3 {
         System.out.println(startTime);
         System.out.println(endTime);
         System.out.println(endTime - startTime);
-
-
-
-
+        
     }
 }
