@@ -12,7 +12,7 @@ public class FileReading {
         // Using normal try catch
         FileInputStream fileInputStream = null;
         try {
-            File file = new File("src/main/resources/input.txt");
+            File file = new File("src/main/resources/input.csv");
             fileInputStream = new FileInputStream(file);
 
            // System.out.println(Arrays.toString(fileInputStream.readAllBytes()));
@@ -28,7 +28,7 @@ public class FileReading {
 
         // using try with resources
 
-        try(FileInputStream fis = new FileInputStream(new File("src/main/resources/input.txt"))) {
+        try(FileInputStream fis = new FileInputStream(new File("src/main/resources/input.csv"))) {
             String content =  new String(fis.readAllBytes(), StandardCharsets.UTF_8 );
 
             System.out.println(content);

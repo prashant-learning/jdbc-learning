@@ -23,6 +23,11 @@ public class DeleteProductById {
 
 
 /**
+ *   2 days -> Reading from a file and writing to a file
+ *
+ *   CSV
+ *   DAT
+ *
  *
  *   Insert into db using statement and PS
  *

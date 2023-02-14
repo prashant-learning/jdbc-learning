@@ -1,0 +1,1 @@
+This is my line and need to count the number of words. Do you know, how to do it?

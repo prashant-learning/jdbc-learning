@@ -1,3 +1,0 @@
-product_id,product_name,product_price,product_category
-0d591d4c-ef8d-4f56-8898-6033e686e0bd,Bat,500,Playing tool
-
