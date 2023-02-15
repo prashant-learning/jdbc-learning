@@ -1,0 +1,9 @@
+Task 1:
+
+1. Create csv file under resource folder
+2. Read all the rows and insert into DB
+
+Task 2:
+
+1. Read all the rows from product table
+2. Write it into the csv file
