@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *    product_id -> string
@@ -22,7 +24,7 @@ import java.sql.Statement;
  *
  *    Home work  -> Calculate the product price by category
  *  *        Map<product_category, product_price>
- *  *        Map<String, String>
+ *  *        Map<String, Integer>
  *
  *
  *    Java 8  Functional programming
@@ -74,17 +76,17 @@ public class ReadDataAndWriteToFile {
         stringBuilder.append("product_id,product_name,product_price,product_category\n");
         int sum = 0;
 
-        while (resultSet.next()){
-            stringBuilder.append(resultSet.getString(1));
-            stringBuilder.append(",");
-            stringBuilder.append(resultSet.getString(2));
-            stringBuilder.append(",");
-            stringBuilder.append(resultSet.getInt(3));
-            stringBuilder.append(",");
-            stringBuilder.append(resultSet.getString(4));
-            stringBuilder.append("\n");
-            sum = sum + resultSet.getInt(3);
-        }
+//        while (resultSet.next()){
+//            stringBuilder.append(resultSet.getString(1));
+//            stringBuilder.append(",");
+//            stringBuilder.append(resultSet.getString(2));
+//            stringBuilder.append(",");
+//            stringBuilder.append(resultSet.getInt(3));
+//            stringBuilder.append(",");
+//            stringBuilder.append(resultSet.getString(4));
+//            stringBuilder.append("\n");
+//            sum = sum + resultSet.getInt(3);
+//        }
 
         stringBuilder.append(",totalSum," +sum+",");
 
@@ -94,6 +96,27 @@ public class ReadDataAndWriteToFile {
 
         Files.write(path, byteStream);
 
+        Map<String, Integer> map = calculateProductWisePrice(resultSet);
 
+        System.out.println(map.get("Playing tool"));
+
+    }
+
+    public static Map<String, Integer> calculateProductWisePrice(ResultSet resultSet) throws SQLException {
+
+        Map<String,Integer> priceMapping = new HashMap<>();
+
+        while (resultSet.next()){
+
+            String category = resultSet.getString(4);
+            int price = resultSet.getInt(3);
+
+            if(priceMapping.containsKey(category)){
+                priceMapping.put(category, price + priceMapping.get(category));
+            } else {
+                priceMapping.put(category, price);
+            }
+        }
+        return priceMapping;
     }
 }
