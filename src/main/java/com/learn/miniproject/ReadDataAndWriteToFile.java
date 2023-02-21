@@ -21,6 +21,9 @@ import java.util.Map;
  *    UUID ->
  *    int ->
  *
+ *    Generic
+ *
+ *
  *
  *    Home work  -> Calculate the product price by category
  *  *        Map<product_category, product_price>
